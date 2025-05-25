@@ -35,12 +35,14 @@ return {
           }
         }
       })
-
       lspconfig.ts_ls.setup({
-        on_attach = on_attach
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+          on_attach(client, bufnr)
+        end,
+        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' }
       })
     end
   }
 }
-
 
