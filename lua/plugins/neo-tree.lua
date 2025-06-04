@@ -13,7 +13,7 @@ return {
         toggle = true,
         dir = vim.loop.cwd(),
         source = "filesystem",
-        position = "right",  
+        position = "right",
       })
     end, { desc = "Toggle Neo-tree filesystem (right)" })
 
@@ -25,13 +25,6 @@ return {
       })
     end, { desc = "Focus Neo-tree filesystem (right)" })
 
-    vim.keymap.set('n', '<leader>c', function()
-      require('neo-tree.command').execute({
-        action = "close",
-        source = "filesystem",
-        position = "right",
-      })
-    end, { desc = "Close Neo-tree filesystem (right)" })
     -- Configure Neo-tree
     require('neo-tree').setup({
       filesystem = {
